@@ -93,10 +93,26 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
- alias zsh_config="vim ~/.zshrc"
- alias vim_config="vim ~/configs/vimconfig/vimrc"
- alias ohmyzsh="vim ~/.oh-my-zsh"
- alias i3_config="vim ~/.config/i3/config"
- alias picom_config="vim ~/.config/picom.conf"
- alias xres_config="vim ~/.Xresources"
- alias xres_reload="xrdb -load ~/.Xresources"
+alias zsh_config="vim ~/.zshrc"
+alias vim_config="vim ~/configs/vimconfig/vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias i3_config="vim ~/.config/i3/config"
+alias picom_config="vim ~/.config/picom.conf"
+alias xres_config="vim ~/.Xresources"
+alias xres_reload="xrdb -load ~/.Xresources"
+
+
+bindkey -v
+bindkey 'kj' vi-cmd-mode
+
+PS1+='${VIMODE}'
+#   '$' for normal insert mode
+#   a big red 'I' for command mode - to me this is 'NOT insert' because red
+function zle-line-init zle-keymap-select {
+    DOLLAR='%B%F{red}$%f%b '
+    GIANT_I='%B%F{green}I%f%b '
+    VIMODE="${${KEYMAP/vicmd/$DOLLAR}/(main|viins)/$GIANT_I}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
