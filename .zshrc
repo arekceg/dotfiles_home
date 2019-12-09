@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/arek/.oh-my-zsh"
+export ZSH="/home/arek/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,7 +109,7 @@ PS1+='${VIMODE}'
 #   '$' for normal insert mode
 #   a big red 'I' for command mode - to me this is 'NOT insert' because red
 function zle-line-init zle-keymap-select {
-    DOLLAR='%B%F{red}$%f%b '
+    DOLLAR='%B%F{grey}N%f%b '
     GIANT_I='%B%F{green}I%f%b '
     VIMODE="${${KEYMAP/vicmd/$DOLLAR}/(main|viins)/$GIANT_I}"
     zle reset-prompt

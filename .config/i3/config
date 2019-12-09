@@ -23,9 +23,13 @@ exec_always feh --bg-tile ~/Pictures/wallpaper_solid3.png
 #exec_always feh --bg-center ~/Pictures/wallpaper7_edit.jpg
 
 # Resolution, refresh rate
-exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal
+set $monitor DisplayPort-0
+set $tv DVI-D-1
 
-bindsym $mod+t exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-0 --off --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off
+exec_always xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-1 --off
+
+bindsym $mod+t exec xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-0 --off --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off
+#bindsym $mod+t exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal1--output $tv --off --output $tv --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off
 
 # Picom
 exec_always picom -bc
@@ -159,16 +163,28 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+bindsym $mod+1 workspace $ws1 
+bindsym $mod+2 workspace $ws2 
+bindsym $mod+3 workspace $ws3 
+bindsym $mod+4 workspace $ws4 
+bindsym $mod+5 workspace $ws5 
+bindsym $mod+6 workspace $ws6 
+bindsym $mod+7 workspace $ws7 
+bindsym $mod+8 workspace $ws8 
+bindsym $mod+9 workspace $ws9 
 bindsym $mod+0 workspace $ws10
+
+# assign workspaced to montior / tv
+workspace $ws1 output $monitor
+workspace $ws2 output $monitor
+workspace $ws3 output $monitor
+workspace $ws4 output $monitor
+workspace $ws5 output $monitor
+workspace $ws6 output $monitor
+workspace $ws7 output $monitor
+workspace $ws8 output $monitor
+workspace $ws9 output $monitor
+workspace $ws10 output $tv
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
