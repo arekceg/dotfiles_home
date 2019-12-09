@@ -106,8 +106,6 @@ bindkey -v
 bindkey 'kj' vi-cmd-mode
 
 PS1+='${VIMODE}'
-#   '$' for normal insert mode
-#   a big red 'I' for command mode - to me this is 'NOT insert' because red
 function zle-line-init zle-keymap-select {
     DOLLAR='%B%F{grey}N%f%b '
     GIANT_I='%B%F{green}I%f%b '
