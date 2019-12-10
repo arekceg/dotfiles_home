@@ -102,15 +102,26 @@ alias xres_config="vim ~/.Xresources"
 alias xres_reload="xrdb -load ~/.Xresources"
 
 
+### VIM ###
+
 bindkey -v
 bindkey 'kj' vi-cmd-mode
 
-PS1+='${VIMODE}'
-function zle-line-init zle-keymap-select {
-    DOLLAR='%B%F{grey}N%f%b '
-    GIANT_I='%B%F{green}I%f%b '
-    VIMODE="${${KEYMAP/vicmd/$DOLLAR}/(main|viins)/$GIANT_I}"
-    zle reset-prompt
+# Stolen and modified from https://github.com/JakobGM
+# Start with beam cursor
+echo -ne '\e[5 q'
+
+# Switch cursors based on mode
+function zle-keymap-select () {
+if [ $KEYMAP = vicmd ]; then
+		# Set block cursor
+		echo -ne '\e[1 q'
+else
+		# Set beam cursor
+		echo -ne '\e[5 q'
+fi
+
 }
-zle -N zle-line-init
+
+# Bind the callback
 zle -N zle-keymap-select
