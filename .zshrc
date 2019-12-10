@@ -103,9 +103,11 @@ alias xres_reload="xrdb -load ~/.Xresources"
 
 
 ### VIM ###
-
 bindkey -v
 bindkey 'kj' vi-cmd-mode
+# Need to rebind backspace
+# otherwise I cannot delete after exiting insert mode
+bindkey "^?" backward-delete-char
 
 # Stolen and modified from https://github.com/JakobGM
 # Start with beam cursor
@@ -113,13 +115,13 @@ echo -ne '\e[5 q'
 
 # Switch cursors based on mode
 function zle-keymap-select () {
-if [ $KEYMAP = vicmd ]; then
+    if [ $KEYMAP = vicmd ]; then
 		# Set block cursor
 		echo -ne '\e[1 q'
-else
+    else
 		# Set beam cursor
 		echo -ne '\e[5 q'
-fi
+    fi
 
 }
 
