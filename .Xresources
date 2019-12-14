@@ -1,19 +1,22 @@
 ! === ROFI ===
-rofi.combi-modi:		window,run,drun
+rofi.combi-modi:		run,drun
 rofi.separator-style:	none
 						/* bg		bord */
-rofi.color-window:		#9D6A8B, #9D6A8B, #FDF4EB
+!rofi.color-window:		argb509D6A8B, #9D6A8B, #FDF4EB
 						/* bg		fg		 bgalt    hlbg	   hlfg */
-rofi.color-normal:		#9D6A8B, #FDF4EB, #9D6A8B, #650841, #ffffff
-rofi.color-active:		#9D6A8B, #ffffff, #9D6A8B, #650841, #ffffff
-rofi.color-urgent:		#650841, #ffffff, #000000, #650841, #ffffff
+!rofi.color-normal:		#9D6A8B, #FDF4EB, #9D6A8B, #650841, #ffffff
+!rofi.color-active:		#9D6A8B, #ffffff, #9D6A8B, #650841, #ffffff
+!rofi.color-urgent:		#650841, #ffffff, #000000, #650841, #ffffff
 
 rofi.hide-scrollbar:	true
-rofi.width:				25
-rofi.lines:				4
+rofi.width:				50
+!rofi.lines:				4
 rofi.padding:			5
-rofi.font:				Inconsolata-g 10
-rofi.opacity:			70
+rofi.font:				Inconsolata-g 20
 rofi.bw:				0
 rofi.eh:				1
 rofi.columns:			1
+
+rofi.display-run:		>
+rofi.display-drun:		>
+rofi.display-combi:		_

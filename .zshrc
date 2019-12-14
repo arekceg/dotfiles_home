@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/arek/.oh-my-zsh"
+path+=('~/.local/bin')
+export PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -94,13 +96,16 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zsh_config="vim ~/.zshrc"
-alias vim_config="vim ~/configs/vimconfig/vimrc"
+alias vim_config="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias i3_config="vim ~/.config/i3/config"
 alias picom_config="vim ~/.config/picom.conf"
 alias xres_config="vim ~/.Xresources"
 alias xres_reload="xrdb -load ~/.Xresources"
 
+# Import wal color schemek
+(cat ~/.cache/wal/sequences &)
+clear
 
 ### VIM ###
 bindkey -v
