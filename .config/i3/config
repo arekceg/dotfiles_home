@@ -19,8 +19,7 @@ smart_gaps on
 smart_borders on 
 
 # Wallpaper
-exec_always feh --bg-tile ~/Pictures/wallpaper_solid3.png
-#exec_always feh --bg-center ~/Pictures/wallpaper7_edit.jpg
+exec --no-startup-id wal -R
 
 # Resolution, refresh rate
 set $monitor DisplayPort-0
@@ -29,18 +28,21 @@ set $tv DVI-D-1
 exec_always xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-1 --off
 
 bindsym $mod+t exec xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-0 --off --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off
-#bindsym $mod+t exec --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal1--output $tv --off --output $tv --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off
 
 # Picom
 exec_always picom -bc
 
 # Autostart
 exec --no-startup-id brave-browser
+exec --no-startup-id redshift
 
 # Colors
-set $bg-color 	         #131c25
-set $inactive-bg-color   #131c25
-set $text-color          #f3f4f5
+set_from_resource $bg-color				i3wm.color0	#000000
+set_from_resource $inactive-bg-color	i3wm.color0	#131c25
+set_from_resource $text-color			i3wm.color0	#f3f4f5
+set_from_resource $active-text-color	i3wm.color0	#f3f4f5
+set_from_resource $active-bg-color		i3wm.color5 #f3f4f5
+set_from_resource $inactive-text-color	i3wm.color4 #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #ba6955
 
@@ -92,7 +94,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -242,7 +244,7 @@ bar {
 		background $bg-color
 	    	separator #757575
 		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
+		focused_workspace  $bg-color          $active-bg-color   $active-text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
