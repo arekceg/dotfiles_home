@@ -3,7 +3,7 @@ Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 " Color theme
-colorscheme wal
+colorscheme delek
 
 " Display line numbers
 set number
