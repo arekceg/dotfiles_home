@@ -33,7 +33,6 @@ bindsym $mod+t exec xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 
 exec_always picom -bc
 
 # Autostart
-exec --no-startup-id brave-browser
 exec --no-startup-id redshift
 
 # Colors

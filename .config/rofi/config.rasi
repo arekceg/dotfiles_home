@@ -1,59 +1,17 @@
 configuration {
 	theme: "~/.cache/wal/colors-rofi-dark.rasi";
-	show-icons:     false;
-	sidebar-mode:   true;
-}
-
-* {
-
-	line-margin:     0;
-	line-padding:    0;
-	separator-style: "none";
-	hide-scrollbar:  "true";
-	margin:          0;
-	padding:         0;
 }
 
 window {
-	location:	 center;
-	anchor:		 center;
-	height:		 40%;
-	width:		 50%;
-	orientation: horizontal;
+    heigth:	50%;
 	children:	 [mainbox];
 }
 
 mainbox {
-	spacing:  0.1em;
 	children: [entry,listview,mode-switcher];
-}
-
-button {
-	padding: 8px 2px;
-}
-
-inputbar {
-	padding: 5px;
-	spacing: 5px;
-}
-
-listview {
-	spacing: 0.5em;
-	dynamic: true;
-	cycle:   false;
-}
-
-element {
-	padding: 8px;
 }
 
 entry {
 	expand:         false;
-	vertical-align: 1;
 	padding:        8px;
-}
-
-
-element selected.normal {
-	border:           0 5px solid 0 0;
 }
