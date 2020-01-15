@@ -1,7 +1,3 @@
-call plug#begin('~/.vim/plugged')
-Plug 'dylanaraps/wal.vim'
-call plug#end()
-
 " Color theme
 colorscheme delek
 
@@ -28,7 +24,7 @@ set sw=8
 set smarttab
 
 " Use system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 " Linebreak on 500 characters
 set lbr
