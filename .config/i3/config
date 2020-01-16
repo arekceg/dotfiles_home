@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Borders settings
 hide_edge_borders both
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 3
 
 # Gaps settings
 gaps inner 20
@@ -27,9 +27,6 @@ set $monitor DisplayPort-0
 set $tv DVI-D-1
 
 ## Autostart
-# XRandr
-exec_always xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-1 --off 
-bindsym $mod+t exec xrandr --output DisplayPort-0 --primary --mode 1920x1080 -r 144 --pos 1920x0 --rotate normal --output DVI-D-0 --off --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -39,14 +36,19 @@ exec --no-startup-id nm-applet
 # Wallpaper
 exec --no-startup-id wal -R
 # Picom
-exec_always picom -bc
+# exec_always picom -bc
 exec --no-startup-id redshift
+exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 
 
 # Colors
 set_from_resource $bg-color				i3wm.color0	#000000
 set_from_resource $inactive-bg-color	i3wm.color0	#131c25
+set_from_resource $color1				i3wm.color1
+set_from_resource $color2				i3wm.color2
+set_from_resource $color3				i3wm.color3
 set_from_resource $text-color			i3wm.color0	#f3f4f5
 set_from_resource $active-text-color	i3wm.color0	#f3f4f5
 set_from_resource $active-bg-color		i3wm.color5 #f3f4f5
@@ -56,9 +58,9 @@ set $urgent-bg-color     #ba6955
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          i3wm.color3           $bg-color          $text-color          #00ff00
-client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused          $urgent-bg-color				$bg-color          $text-color          #00ff00
+client.unfocused        $inactive-text-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 
@@ -85,7 +87,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
