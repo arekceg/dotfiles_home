@@ -1,5 +1,0 @@
-0000000000000000000000000000000000000000 d70542f07383b9e628a8e7662924163ca71afdeb arekceg <arekceg@arekceg-pc.(none)> 1579116567 +0100	reset: moving to origin/master
-d70542f07383b9e628a8e7662924163ca71afdeb 01b609953785602850cddc57e26dd9c3568e9353 arekceg <arekceg@protonmail.com> 1579122061 +0100	commit: Stolen some good ideas from default Manjaro i3 config
-01b609953785602850cddc57e26dd9c3568e9353 03bf4066ac2695d114f01f96c9be63c65eb75860 arekceg <arekceg@protonmail.com> 1579122739 +0100	commit: Add shutdown menu
-03bf4066ac2695d114f01f96c9be63c65eb75860 d95c31c7300763b83f4e449649277245bf6e37bc arekceg <arekceg@protonmail.com> 1579122836 +0100	commit: Initial commit
-d95c31c7300763b83f4e449649277245bf6e37bc 6ed23e678c1edef36c35dc8d3d574d0192d41bda arekceg <arekceg@protonmail.com> 1579195267 +0100	commit: Add qutebrowser settings
