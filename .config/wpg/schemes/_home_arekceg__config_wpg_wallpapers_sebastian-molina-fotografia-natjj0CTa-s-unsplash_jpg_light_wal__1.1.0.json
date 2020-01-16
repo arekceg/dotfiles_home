@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/arekceg/.config/wpg/wallpapers/sebastian-molina-fotografia-natjj0CTa-s-unsplash.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#f7f7f7",
+        "foreground": "#101011",
+        "cursor": "#101011"
+    },
+    "colors": {
+        "color0": "#f7f7f7",
+        "color1": "#9A823D",
+        "color2": "#968C6B",
+        "color3": "#6D7689",
+        "color4": "#7A848D",
+        "color5": "#989998",
+        "color6": "#AFAFB1",
+        "color7": "#101011",
+        "color8": "#7b7b7b",
+        "color9": "#9A823D",
+        "color10": "#968C6B",
+        "color11": "#6D7689",
+        "color12": "#7A848D",
+        "color13": "#989998",
+        "color14": "#AFAFB1",
+        "color15": "#101011"
+    }
+}

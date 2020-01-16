@@ -41,12 +41,11 @@ exec --no-startup-id redshift
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
-
-
 # Colors
 set_from_resource $bg-color				i3wm.color0	#000000
+set_from_resource $foreground			i3wm.foreground
 set_from_resource $inactive-bg-color	i3wm.color0	#131c25
-set_from_resource $color1				i3wm.color1
+set_from_resource $indicator			i3wm.color2
 set_from_resource $color2				i3wm.color2
 set_from_resource $color3				i3wm.color3
 set_from_resource $text-color			i3wm.color0	#f3f4f5
@@ -58,11 +57,10 @@ set $urgent-bg-color     #ba6955
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $urgent-bg-color				$bg-color          $text-color          #00ff00
-client.unfocused        $inactive-text-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
+client.focused          $foreground			$foreground			$text-color			$indicator
+client.unfocused        $inactive-text-color $inactive-bg-color $inactive-text-color $indicator
+client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -139,7 +137,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-for_window [class="vlc"] floating enable
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -149,6 +146,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+
+for_window [class="vlc"] floating enable
+for_window [class="Sxiv"] border none
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

@@ -43,6 +43,8 @@ c.url.searchengines = \
 	'gh': 'http://github.com/search?q={}', 
 	'r': 'http://www.reddit.com/r/{}/'}
 
+# Startpages
+c.url.start_pages = ["https://startpage.com"]
 
 # Open new private window
 nmap ('tp','open -p')

@@ -6,13 +6,5 @@
 
 config_version: 2
 settings:
-  bindings.commands:
-    global:
-      normal:
-        J: tab-prev
-        K: tab-next
-  url.default_page:
-    global: http://startpage.com
-  url.searchengines:
-    global:
-      DEFAULT: https://startpage.com/?q={}
+  url.start_pages:
+    global: https://startpage.com

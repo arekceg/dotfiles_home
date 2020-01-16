@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/arekceg/.config/wpg/wallpapers/josh-spires-dronenr-vm6CjQo2vOU-unsplash.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#dfcdc4",
+        "foreground": "#010101",
+        "cursor": "#010101"
+    },
+    "colors": {
+        "color0": "#dfcdc4",
+        "color1": "#33718F",
+        "color2": "#ACB2BC",
+        "color3": "#B08B73",
+        "color4": "#927060",
+        "color5": "#5495AF",
+        "color6": "#897A86",
+        "color7": "#091927",
+        "color8": "#c4b4ac",
+        "color9": "#135474",
+        "color10": "#5974a2",
+        "color11": "#945b37",
+        "color12": "#7b462e",
+        "color13": "#247190",
+        "color14": "#763f6b",
+        "color15": "#010101"
+    }
+}
