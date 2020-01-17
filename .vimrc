@@ -1,5 +1,8 @@
-" Color theme
-colorscheme delek
+call plug#begin()
+Plug 'dylanaraps/wal.vim'
+call plug#end()
+
+colorscheme wal
 
 " Display line numbers
 set number
