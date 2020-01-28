@@ -22,9 +22,10 @@ smart_gaps on
 smart_borders on 
 
 
-# Resolution, refresh rate
-# set $monitor DisplayPort-0
-# set $tv DVI-D-1
+# Screen setting
+set $right_screen eDP-1
+set $center_screen DP-2-1
+set $left_screen DP-2-2
 
 ## Autostart
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -37,9 +38,12 @@ exec --no-startup-id nm-applet
 exec --no-startup-id wal -R
 # Picom
 # exec_always picom -bc
-exec --no-startup-id redshift
+exec --no-startup-id redshift -O 4300
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id /home/aceglowski/.screenlayout/multimonitor_work.sh
+# Call 'feh' to set the wallpaper.
+exec --nostartup-id feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
+exec --nostartup-id davmail
 
 # Screen Shots
 bindsym $mod+Ctrl+p exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
@@ -56,8 +60,8 @@ set_from_resource $text-color			i3wm.color0	#f3f4f5
 set_from_resource $active-text-color	i3wm.color0	#f3f4f5
 set_from_resource $active-bg-color		i3wm.color5 #f3f4f5
 set_from_resource $inactive-text-color	i3wm.color4 #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #ba6955
+set $inactive-text-color				i3wm.foreground
+set $urgent-bg-color					i3wm.backg
 
 # window colors
 #                       border              background         text                 indicator
@@ -163,11 +167,11 @@ for_window [class="Sxiv"] border none
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Terminus"
-set $ws2 "2: Browser"
-set $ws3 "3: Intellij"
-set $ws4 "4: Games"
-set $ws5 "5: Music"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -187,16 +191,16 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # assign workspaced to montior / tv
-workspace $ws1 output $monitor
-workspace $ws2 output $monitor
-workspace $ws3 output $monitor
-workspace $ws4 output $monitor
-workspace $ws5 output $monitor
-workspace $ws6 output $monitor
-workspace $ws7 output $monitor
-workspace $ws8 output $monitor
-workspace $ws9 output $monitor
-workspace $ws10 output $tv
+workspace $ws1 output $center_screen
+workspace $ws2 output $center_screen
+workspace $ws3 output $center_screen
+workspace $ws4 output $left_screen
+workspace $ws5 output $left_screen
+workspace $ws6 output $left_screen
+workspace $ws7 output $right_screen
+workspace $ws8 output $right_screen
+workspace $ws9 output $right_screen
+workspace $ws10 output $right_screen
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -209,9 +213,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-
-
-assign [class="Brave-browser"] $ws2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

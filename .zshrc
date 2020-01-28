@@ -132,3 +132,7 @@ function zle-keymap-select () {
 
 # Bind the callback
 zle -N zle-keymap-select
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/aceglowski/.sdkman"
+[[ -s "/home/aceglowski/.sdkman/bin/sdkman-init.sh" ]] && source "/home/aceglowski/.sdkman/bin/sdkman-init.sh"
