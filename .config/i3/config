@@ -17,7 +17,7 @@ for_window [class=".*"] border pixel 3
 
 # Gaps settings
 gaps inner 15
-gaps outer 0
+gaps outer 10
 smart_gaps on
 smart_borders on 
 
@@ -42,8 +42,8 @@ exec --no-startup-id redshift -O 4300
 exec --no-startup-id volumeicon
 exec --no-startup-id /home/aceglowski/.screenlayout/multimonitor_work.sh
 # Call 'feh' to set the wallpaper.
-exec --nostartup-id feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
-exec-always davmail
+exec --no-startup-id davmail
+exec --no-startup-id feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
 
 # Screen Shots
 bindsym $mod+Ctrl+p exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
@@ -166,6 +166,9 @@ for_window [class="Sxiv"] border none
 for_window [class="java-lang-Thread"] floating enable
 for_window [class="Msgcompose"] floating enable
 for_window [class="Pidgin"] floating enable
+for_window [class="bravura-sonata-application-SonataFrameIDE"] floating enable
+for_window [class="jetbrains-toolbox"] floating enable
+for_window [class="jetbrains-idea"] border none
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

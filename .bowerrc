@@ -1,0 +1,4 @@
+{
+		"proxy":"http://warprx01:3128",
+		"https-proxy":"https://wawprx01:3128"
+}
