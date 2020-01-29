@@ -43,14 +43,14 @@ exec --no-startup-id volumeicon
 exec --no-startup-id /home/aceglowski/.screenlayout/multimonitor_work.sh
 # Call 'feh' to set the wallpaper.
 exec --nostartup-id feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
-exec --nostartup-id davmail
+exec-always davmail
 
 # Screen Shots
 bindsym $mod+Ctrl+p exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 bindsym $mod+Shif+p exec gnome-screenshot -i
 
 # Colors
-set_from_resource $bg-color				i3wm.color0	#000000
+set_from_resource $bg-color				i3wm.background	#000000
 set_from_resource $foreground			i3wm.foreground
 set_from_resource $inactive-bg-color	i3wm.color0	#131c25
 set_from_resource $indicator			i3wm.color2
@@ -64,15 +64,15 @@ set $inactive-text-color				i3wm.foreground
 set $urgent-bg-color					i3wm.backg
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $foreground			$foreground			$text-color			$indicator
-client.unfocused        $inactive-text-color $inactive-bg-color $inactive-text-color $indicator
-client.focused_inactive $inactive-bg-color	$inactive-bg-color $inactive-text-color $inactive-bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
+#                       border					background				text                 indicator
+client.focused          $foreground				$foreground				$text-color		     $indicator
+client.unfocused        $inactive-text-color	$bg-color				$inactive-text-color $indicator
+client.focused_inactive $inactive-bg-color		$bg-color				$inactive-text-color $inactive-bg-color
+client.urgent           $urgent-bg-color		$urgent-bg-color		$text-color          $urgent-bg-color
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-set $font Inconsolata-g 13
+set $font Inconsolata-g 15
 font pango:$font
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -162,8 +162,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-for_window [class="vlc"] floating enable
 for_window [class="Sxiv"] border none
+for_window [class="java-lang-Thread"] floating enable
+for_window [class="Msgcompose"] floating enable
+for_window [class="Pidgin"] floating enable
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

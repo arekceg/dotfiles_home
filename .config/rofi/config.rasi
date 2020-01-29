@@ -1,0 +1,12 @@
+configuration {
+		theme: "~/.cache/wal/colors-rofi-dark.rasi";
+		modi: "window,drun";
+		separator-style: "none";
+		hide-scrollbar:	"true";
+		font: "Inconsolata-g 20";
+		display-run: ">";
+		display-drun: ">";
+		display-combi: "_";
+}
+
+/* vim:ft=css
