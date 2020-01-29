@@ -27,7 +27,7 @@ set sw=8
 set smarttab
 
 " Use system clipboard
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamedplus
 
 " Linebreak on 500 characters
 set lbr

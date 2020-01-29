@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/aceglowski/.config/fish/functions'
+let g:netrw_dirhist_3='/home/aceglowski/.vim'
 let g:netrw_dirhist_2='/home/arekceg/.config/fish/conf.d'
 let g:netrw_dirhist_1='/home/arekceg/.config/i3'
