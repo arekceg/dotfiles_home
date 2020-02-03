@@ -6,7 +6,7 @@ configuration {
 		font: "Inconsolata-g 20";
 		display-run: ">";
 		display-drun: ">";
-		display-combi: "_";
+		display-combi: "";
 }
 
 /* vim:ft=css

@@ -18,10 +18,10 @@ vmap kj <Esc>
 set sts=4
 
 " Width of tab if 4
-set ts=4
+set ts=1
 
 " Indents have a with of 8
-set sw=8
+set sw=4
 
 " Smart tabs
 set smarttab
