@@ -13,7 +13,9 @@ set $mod Mod4
 
 # Borders settings
 hide_edge_borders both
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
+
+focus_follows_mouse no
 
 # Gaps settings
 gaps inner 15
@@ -22,13 +24,14 @@ smart_gaps on
 smart_borders on 
 
 # Screen setting
-set $right_screen eDP-1
-set $center_screen DP-2-1
-set $left_screen DP-2-2
+set $monitor DisplauPort-1
+set $tv HDMI-A-0
 
 ## Autostart
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
+exec_always ~/.screenlayout/one_screen.sh
+bindsym $mod+Shift+t exec ~/.screenlayout/two_screens.sh
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -36,17 +39,14 @@ exec --no-startup-id nm-applet
 # Wallpaper
 exec --no-startup-id wal -R
 # Picom
-# exec_always picom -bc
+exec_always picom -bc
 exec --no-startup-id redshift -O 4300
 exec --no-startup-id volumeicon
-exec --no-startup-id /home/aceglowski/.screenlayout/multimonitor_work.sh
 # Call 'feh' to set the wallpaper.
-exec --no-startup-id davmail
 exec --no-startup-id feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
 
 # Screen Shots
-bindsym $mod+Ctrl+p exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
-bindsym $mod+Shif+p exec gnome-screenshot -i
+bindsym $mod+Ctrl+p exec gnome-screenshot -i
 
 # Colors
 set_from_resource $bg-color				i3wm.background	#000000
@@ -71,7 +71,7 @@ client.urgent           $urgent-bg-color		$urgent-bg-color		$text-color         
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-set $font Inconsolata-g 15
+set $font Raleway 15
 font pango:$font
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -160,14 +160,6 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-
-for_window [class="Sxiv"] border none
-for_window [class="java-lang-Thread"] floating enable
-for_window [class="Msgcompose"] floating enable
-for_window [class="Pidgin"] floating enable
-for_window [class="Thunderbird" instance="Calendar"] floating enable resize set 800 600
-for_window [class="Thunderbird" instance="Msgcompose"] floating enable resize set 1200 1000
-for_window [class="bravura-sonata-application-SonataFrameIDE"] floating enable
 for_window [class="jetbrains-toolbox"] floating enable
 for_window [class="jetbrains-idea"] border none
 
@@ -197,16 +189,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # assign workspaced to montior / tv
-workspace $ws1 output $center_screen
-workspace $ws2 output $center_screen
-workspace $ws3 output $center_screen
-workspace $ws4 output $left_screen
-workspace $ws5 output $left_screen
-workspace $ws6 output $left_screen
-workspace $ws7 output $right_screen
-workspace $ws8 output $right_screen
-workspace $ws9 output $right_screen
-workspace $ws10 output $right_screen
+workspace $ws10 output $tv
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -268,6 +251,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # bar
 bar {
+ modifier none
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
@@ -278,7 +262,7 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	font xft:URWGothic-Book 11
+	font xft:RobotoMono 11
 	strip_workspace_numbers yes
 
 	colors {

@@ -1,1 +1,1 @@
-/home/aceglowski/.local/share/omf/themes/slavic-cat/fish_prompt.fish
+/home/arekceg/.local/share/omf/themes/slavic-cat/fish_prompt.fish
