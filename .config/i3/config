@@ -42,7 +42,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id wal -R
 # Picom
 exec_always picom -bc
-exec --no-startup-id redshift -O 4300
+exec --no-startup-id redshift -O 3100
 exec --no-startup-id volumeicon
 # Call 'feh' to set the wallpaper.
 exec --no-startup-id feh --bg-fill "$(< "${HOME}/.cache/wal/wal")"
@@ -73,12 +73,12 @@ client.urgent           $urgent-bg-color		$urgent-bg-color		$text-color         
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-set $font Raleway 15
-font pango:$font
+#set $font Raleway 15
+#font pango:$font
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -253,30 +253,29 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # bar
 #bar {
- #modifier none
-	#i3bar_command i3bar
-	#status_command i3status
-	#position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+# modifier none
+#	i3bar_command i3bar
+#	status_command i3status
+#	position bottom
+#
+# please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
 #	tray_output eDP1
 #
-	#bindsym button4 nop
-	#bindsym button5 nop
-	#font xft:RobotoMono 11
-	#strip_workspace_numbers yes
+#	bindsym button4 nop
+#	bindsym button5 nop
+#	font xft:RobotoMono 11
+#	strip_workspace_numbers yes
 #
-	#colors {
-		#background $bg-color
-	    	#separator #757575
-		##                  border             background         text
-		#focused_workspace  $bg-color          $active-bg-color   $active-text-color
-		#inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		#urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	#}
+#	colors {
+#		background $bg-color
+#	    	separator 757575
+#		                  border             background         text
+#		focused_workspace  $bg-color          $active-bg-color   $active-text-color
+#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	}
 #}
-
 #bindsym $mod+m bar mode toggle
 
 # Media keys
