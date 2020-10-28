@@ -3,10 +3,11 @@ configuration {
 		modi: "window,drun";
 		separator-style: "none";
 		hide-scrollbar:	"true";
-		font: "RobotoMono 20";
+		font: "RobotoMono 18";
 		display-run: ">";
 		display-drun: ">";
 		display-combi: "";
+		width: 40;
 }
 
 /* vim:ft=css
