@@ -2,3 +2,4 @@
 volumeicon & disown
 xbanish & disown
 slstatus & disown
+flameshot & disown

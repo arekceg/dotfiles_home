@@ -1,5 +1,6 @@
 set fish_key_bindings fish_user_key_bindings
 alias vim "gvim -v"
+alias u "sudo pacman -Syu && yay"
 xset r rate 300 50
 
 # Start X at login
