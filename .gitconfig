@@ -109,8 +109,6 @@
     excludesfile = ~/.gitignore
     autocrlf     = input
 	editor = gvim -v
-[credential]
-    helper = wincred
 [push]
     default = tracking
 [pull]
