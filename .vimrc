@@ -4,6 +4,9 @@ call plug#end()
 
 colorscheme wal
 
+" Leader Mapping
+let mapleader=","
+
 " Display hybird line numbers
 set number relativenumber
 
@@ -24,6 +27,13 @@ nnoremap j gj
 nnoremap gj j
 nnoremap k gk
 nnoremap gk k
+
+" Map regular paste to blackhole register
+" Map leader+d to blackhole register
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap p "_dP
+xnoremap <leader>p p
 
 "Map [ESC] to kj
 imap kj <Esc>

@@ -1,14 +1,6 @@
-[http]
-[push]
-		                default = simple
-[core]
-		                autocrlf = true
-[pull]
-		                rebase = preserve
-[https]
 [user]
     name  = aceglowski
-    email = arekceg@protonmail.com
+    email = arakadiusz.ceglowski@panek.eu
 [color]
     branch = auto
     diff   = auto
@@ -28,7 +20,6 @@
     changed   = yellow
     untracked = red
 [alias]
- 
     # Quick shortcuts
     st = status -s
     cl = clone
@@ -104,25 +95,6 @@
  
     # Executes a command in the git root
     run = '!exec
- 
 [core]
     excludesfile = ~/.gitignore
-    autocrlf     = input
-	editor = gvim -v
-[push]
-    default = tracking
-[pull]
-    rebase = true
-[diff]
-    algorithm = histogram
-[difftool]
-    prompt = false
-[merge]
-    ff = false
-[mergetool]
-    prompt = false
-[http]
-    sslVerify  = false
-    postbuffer = 524288000
-[i18n]
-    filesEncoding = utf-8
+	   editor = gvim -v
