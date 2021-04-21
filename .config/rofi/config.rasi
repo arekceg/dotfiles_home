@@ -2,7 +2,7 @@ configuration {
 		theme: "~/.cache/wal/colors-rofi-light.rasi";
 		modi: "window,drun";
 		separator-style: "none";
-		hide-scrollbar:	"true";
+		hide-scrollbar:	true;
 		font: "IBMPlexMono 18";
 		display-run: ">";
 		display-drun: ">";
